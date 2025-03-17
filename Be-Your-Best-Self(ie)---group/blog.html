@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Blog</title>
+    <link rel="stylesheet" href="blog.css" />
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('ocean2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #020000;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: white;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden; /* Clears floats */
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #7dbad3;
+    font-weight: bold;
+    padding: 6px 6px 26px 6px;
+    /* margin-top: 10px; */
+}
+
+nav a#sign-up {
+    float: left;
+    background-color: rgb(14, 108, 163);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.search-icon {
+    vertical-align: middle;
+    width: 24px; /* Adjust size as needed */
+    height: auto;
+}
+
+section {
+    max-width: 800px;
+    height: auto;
+    margin: 40px auto;
+    background-color: #f5f6fa;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(101, 137, 204, 0.1);
+    text-align: justify;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.blog-title {
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+    color: black;
+    font-size: 70px;
+}
+
+footer {
+    background-color: #ecf3f8;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.slider {
+    width: 100%;
+    height: 60vh; /*Adjusted for better layout*/
+    /* height:auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.slider div {
+    transition: all 0.5s ease;
+    position: absolute;
+    width: 100%; /* Smaller images */
+    height: 60vh;
+    /* height:auto; */
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    opacity: 0.6;
+    z-index: 1;
+}
+.slider div.selected {
+    width: 100%; /* Selected image */
+    /* height: 60vh; */
+    height:100%;
+    opacity: 1;
+    z-index: 10;
+    transform: scale(1.05);
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+button {
+    cursor: pointer;
+}
+.blog-content {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+.health_card {
+    display: flex; /* Ensures the card contents are laid out horizontally */
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    background-color: white;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150px; /* Reduced height */
+}
+.health_card text{
+    float: right;
+}
+
+.health_header {
+    flex: 0 1 150px; /* flex-grow, flex-shrink, flex-basis */
+    margin-right: 20px; /* Space between the header and the description */
+}
+
+.health_desc {
+    flex: 1 1 auto; /* Takes up the remaining space */
+    display: flex;
+    flex-direction: column; /* Stacks the text vertically */
+    justify-content: center; /* Center the content vertically */
+    padding: 0 20px; /* Padding for spacing */
+    overflow: hidden; /* Ensures no overflow of text */
+}
+
+.blur_back {
+    width: 200px; /* Fixed width for the background image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+/* If you want to remove the image and expand the description */
+.health_desc {
+    flex: 1; /* Allows the description to take available space */
+}
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="blog-title">
+            <h1 align="center">BLOG</h1>
+        </div>
+        <br>
+        <nav>
+            <a href="loginsignuppage.html" id="sign-up">Sign Up</a>
+            <a href="#blogs" style="font-size: 20px;">Blogs</a>
+            <a href="listenerqa.html"  style="font-size: 20px;" >Listener Q/A</a>
+            <a href="contest.html"  style="font-size: 20px;">Contest</a>
+            <a href="uploadblog.html"  style="font-size: 20px;">Upload Blog</a>
+            <!-- <a href="#search"><img class="search-icon" src="search-icon.png" alt="Search"></a> -->
+        </nav>
+        <div class="container" id="blogs">
+            <div class="slider">
+                <div class="box1 selected" style="background-image:url('https://www.impactplus.com/hs-fs/hubfs/blog-image-uploads/best-about-us-pages.jpg?length=1200&name=best-about-us-pages.jpg');"></div>
+                <div class="box2" style="background-image:url('https://wallpapers.com/images/featured/healthcare-oco8w27tkw40cp90.jpg');"></div>
+                <div class="box3" style="background-image:url('https://wp.dailybruin.com/images/2017/07/music_therapy_illo_final.jpg');"></div>
+                <div class="box4" style="background-image:url('https://png.pngtree.com/thumb_back/fh260/background/20230715/pngtree-d-illustration-of-laptop-furnished-with-educational-materials-signifying-online-education-image_3861968.jpg');"></div>
+            
+            </div>
+            <div class="buttons">
+                <button id="prev">Prev</button>
+                <button id="next">Next</button>
+            </div>
+            <div class="blog-content" id="blog-content">
+                <!-- Blog content will be dynamically inserted here -->
+            </div>
+        </div>
+        <!-- <p>Welcome to our podcast blog where we share updates, insights, and behind-the-scenes stories from our latest episodes.</p> -->
+    </section>
+
+    
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    const slider = document.querySelector('.slider');
+    const boxes = slider.querySelectorAll('div');
+    const blogContent = document.getElementById('blog-content');
+
+    // Define the initial content
+    const initialContent = `
+        <p>Welcome to Our Podcast website name: "Be Your Best Self(ie): The Ultimate Guide to Self-Care" - Your Holistic Guide to Health & Wellbeing!</p>
+        <p>Embark on a transformative digital journey with us, where self-care transcends the conventional and ventures into the realm of holistic health and wellness. Much more than a typical podcast platform, we invite you to explore a space meticulously curated for health-conscious individuals, those seeking alternative approaches for health-care related issues, and medical students and professionals preparing for exams and interviews.</p>
+        <ul>
+            <li><strong>Comprehensive Self-Care Hub:</strong> Dive into our user-friendly interface, carefully designed to be your go-to destination for a holistic self-care experience. "Be Your Best Self(ie)" brings together podcasts, blog articles, and interactive learning resources, creating a one-stop platform for all aspects of health and wellbeing.</li>
+            <li><strong>Alternative Approaches Explored:</strong> Discover a space that champions complementary therapies, natural remedies, and lifestyle changes. Join us as we explore the vast landscape of self-care, offering practical and inspiring information for those seeking alternatives.</li>
+            <li><strong>Integrative Medical Insights:</strong> For medical students and professionals, "Be Your Best Self(ie)" opens the door to integrative methods and a deeper understanding of patient perspectives. Uncover valuable insights, study materials, and interview preparation tips, fostering a well-rounded approach to healthcare.</li>
+        </ul>
+    `;
+
+    // Initially set the blog content to the first item's content
+    blogContent.innerHTML = initialContent;
+
+    // Category card data arrays
+    const healthCards = [
+        {
+                            title: "Managing Diabetes",
+                            subtitle: "2024, Dr. Smith",
+                            minutes: "5 min read",
+                            type: "Health, Wellness",
+                            description: "Discover effective dietary strategies to manage diabetes, including carb counting, glycemic index, and meal planning tips to maintain a healthy lifestyle.",
+                            backgroundImage: "https://example.com/bg-diabetes.jpg"
+                        },
+                    {
+                        title: "Managing Diabetes",
+                        subtitle: "2024, Dr. Smith",
+                        minutes: "5 min read",
+                        type: "Health, Wellness",
+                        description: "Discover effective dietary strategies to manage diabetes, including carb counting, glycemic index, and meal planning tips to maintain a healthy lifestyle.",
+                        image: "https://example.com/diabetes.jpg",
+                        backgroundImage: "https://example.com/bg-diabetes.jpg"
+                    },
+                    {
+                        title: "Diet Control",
+                        subtitle: "2024, Nutritionist Doe",
+                        minutes: "3 min read",
+                        type: "Nutrition",
+                        description: "Learn about balanced diets that can help control blood sugar levels and improve your overall health.",
+                        image: "https://example.com/diet.jpg",
+                        backgroundImage: "https://example.com/bg-diet.jpg"
+                    },
+                    {
+                        title: "Exercise for Diabetics",
+                        subtitle: "2024, Fitness Expert",
+                        minutes: "4 min read",
+                        type: "Fitness",
+                        description: "Effective exercise routines that help in managing diabetes and maintaining a healthy weight.",
+                        image: "https://example.com/exercise.jpg",
+                        backgroundImage: "https://example.com/bg-exercise.jpg"
+                    }
+    ]; // Populate with health card objects as previously defined
+    const musicCards = [
+        {
+                        title: "Learn Guitar",
+                        subtitle: "2024, Guitar Instructor",
+                        minutes: "7 min read",
+                        type: "Music Tutorial",
+                        description: "Step-by-step guide to learning guitar chords, strumming patterns, and popular songs.",
+                        backgroundImage: "https://example.com/guitar-tutorial.jpg"
+                    },
+                    {
+                        title: "Understanding Music Theory",
+                        subtitle: "2024, Music Theorist",
+                        minutes: "5 min read",
+                        type: "Educational",
+                        description: "A beginner's guide to music theory: understanding scales, chords, and key signatures.",
+                        backgroundImage: "https://example.com/music-theory.jpg"
+                    }
+    ];  // Populate with music card objects as previously defined
+    const educationCards = [
+        {
+                        title: "Competitive Exam Strategies",
+                        subtitle: "2024, Exam Prep Coach",
+                        minutes: "6 min read",
+                        type: "Study Tips",
+                        description: "Effective strategies and tips to ace competitive exams with comprehensive preparation plans.",
+                        backgroundImage: "https://example.com/exam-prep.jpg"
+                    },
+                    {
+                        title: "Interview Preparation Tips",
+                        subtitle: "2024, Career Counselor",
+                        minutes: "4 min read",
+                        type: "Career Advice",
+                        description: "Master your interview with these key tips and common questions.",
+                        backgroundImage: "https://example.com/interview-tips.jpg"
+                    }
+    ]; // Populate with education card objects as previously defined
+
+    function generateCard(card) {
+        return `
+            <div class="health_card">
+                <div class="health_header">
+                    <h3>${card.title}</h3>
+                    <h4>${card.subtitle}</h4>
+                    <span class="minutes" style="float:right">${card.minutes}</span>
+                    <p class="type">${card.type}</p>
+                </div>
+                <div class="health_desc">
+                    <p class="text">${card.description}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    function updateBlogContent(index) {
+        switch (index) {
+            case 1:  // Assuming index 1 is for Health
+                const healthHTML = healthCards.map(card => generateCard(card)).join('');
+                blogContent.innerHTML = healthHTML;
+                break;
+            case 2:  // Assuming index 2 is for Music
+                const musicHTML = musicCards.map(card => generateCard(card)).join('');
+                blogContent.innerHTML = musicHTML;
+                break;
+            case 3:  // Assuming index 3 is for Education
+                const educationHTML = educationCards.map(card => generateCard(card)).join('');
+                blogContent.innerHTML = educationHTML;
+                break;
+            default:
+                blogContent.innerHTML = initialContent;
+        }
+    }
+    
+
+    boxes.forEach((box, index) => {
+        box.addEventListener('click', () => {
+            slider.querySelector('.selected').classList.remove('selected');
+            box.classList.add('selected');
+            updateBlogContent(index);
+        });
+    });
+
+    next.addEventListener('click', function() {
+        let currentIndex = Array.from(boxes).indexOf(slider.querySelector('.selected'));
+        let nextIndex = (currentIndex + 1) % boxes.length;
+        boxes[currentIndex].classList.remove('selected');
+        boxes[nextIndex].classList.add('selected');
+        updateBlogContent(nextIndex);
+    });
+
+    prev.addEventListener('click', function() {
+        let currentIndex = Array.from(boxes).indexOf(slider.querySelector('.selected'));
+        let prevIndex = (currentIndex - 1 + boxes.length) % boxes.length;
+        boxes[currentIndex].classList.remove('selected');
+        boxes[prevIndex].classList.add('selected');
+        updateBlogContent(prevIndex);
+    });
+
+    // Optionally set the initial content here again if needed
+    updateBlogContent(0); // Uncomment this if initial content is not set correctly
+});
+
+   </script>
+
+</body>
+</html>
